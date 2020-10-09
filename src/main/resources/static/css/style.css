@@ -5,3 +5,6 @@ body {
 h1 {
 	font-family: monsterat;
 }
+.error {
+	color: red;
+}

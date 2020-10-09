@@ -1,7 +1,10 @@
-package mConfiguration;
+package com.akku.myConfiguration;
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
@@ -9,7 +12,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages= "myController")
+@ComponentScan(basePackages= "com.akku")
 public class SpringWebConfig implements WebMvcConfigurer {
 	
 //	@Bean
@@ -36,4 +39,18 @@ public class SpringWebConfig implements WebMvcConfigurer {
 		registry.addResourceHandler("/resources/**").addResourceLocations("classpath:/static/");
 	}
 	
+	@Bean
+	DriverManagerDataSource getDataSource() {
+		DriverManagerDataSource dm = new DriverManagerDataSource();
+		dm.setDriverClassName("com.mysql.jdbc.Driver");
+		dm.setUrl("jdbc:mysql://localhost:3306/test");
+		dm.setUsername("root2");
+		dm.setPassword("7860");
+		return dm;
+	}
+	
+	@Bean
+	public JdbcTemplate jdbcTemplate() {
+		return new JdbcTemplate((javax.sql.DataSource) getDataSource());
+	}
 }

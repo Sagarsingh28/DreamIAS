@@ -18,9 +18,11 @@
 	<form:form action="processRegistration" modelAttribute="obj">
 		<div class="form-group">
 			<form:input class="form-control" path="userEmail" placeholder="Email ID"/>
+			<form:errors path="userEmail" cssClass="error"/>
 		</div>
 		<div class="form-group">
 			<form:input class="form-control" path="userName" placeholder="User Name" />
+			<form:errors path="userName" cssClass="error"/>
 		</div>
 		<div class="form-group">
 			<input class="form-control" type="password" name="userPass" placeholder="Password" />
@@ -30,6 +32,7 @@
 		</div>
 		<div class="form-group">
 			<form:input class="form-control" path="userPhoneNumber" placeholder="Phone Number"/>
+			<form:errors path="userPhoneNumber" cssClass="error"/>
 		</div>
 		<div class="form-group">
 			<form:select class="form-control" path="userState">
@@ -42,7 +45,6 @@
 </div>
 </div>
 <h4>${msg}</h4>
-<h4>${check}</h4>
 	
 
 	

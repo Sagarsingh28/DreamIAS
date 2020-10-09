@@ -17,7 +17,7 @@
 <body>
 	<h1 class="jumbotron">Congratulations!</h1>
 	<div class="form-group">
-		<form:form action="startPage">
+		<form:form action="startPage" modelAttribute="objUser">
 			<input type="submit" value="Login" class="btn btn-lg btn-primary btn-block">
 		</form:form>
 	</div>

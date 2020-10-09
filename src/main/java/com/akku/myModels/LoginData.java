@@ -1,11 +1,22 @@
-package myController;
+package com.akku.myModels;
+
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 public class LoginData {
+	
+	@NotNull(message="required*")
 	private String userEmail;
+	
+	@NotNull(message="required")
+	@Size(min=1, message="required*")
 	private String userName;
+	
 	private String userPass;
 	private String userRepass;
 	private String userState;
+	
+	@NotNull(message="required")
 	private String userPhoneNumber="+91";
 	
 	public String getUserName() {
@@ -14,10 +25,10 @@ public class LoginData {
 	public void setUserName(String name) {
 		this.userName = name;
 	}
-	public String getUserPasscode() {
+	public String getUserPass() {
 		return userPass;
 	}
-	public void setUserPasscode(String passcode) {
+	public void setUserPass(String passcode) {
 		this.userPass = passcode;
 	}
 	public String getUserEmail() {

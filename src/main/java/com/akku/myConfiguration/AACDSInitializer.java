@@ -1,4 +1,4 @@
-package mConfiguration;
+package com.akku.myConfiguration;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
