@@ -15,9 +15,9 @@
 	rel="stylesheet" />
 </head>
 <body>
-	<h1 class="jumbotron">Congratulations!</h1>
+	<h1 class="jumbotron">Congratulations ${obj.userName}! </h1>
 	<div class="form-group">
-		<form:form action="startPage" modelAttribute="objUser">
+		<form:form action="startingPage" modelAttribute="objUser">
 			<input type="submit" value="Login" class="btn btn-lg btn-primary btn-block">
 		</form:form>
 	</div>

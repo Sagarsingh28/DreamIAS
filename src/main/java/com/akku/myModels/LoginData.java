@@ -2,21 +2,26 @@ package com.akku.myModels;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import customAnnotations.atGmail;
 
 public class LoginData {
 	
 	@NotNull(message="required*")
+	@atGmail
 	private String userEmail;
 	
 	@NotNull(message="required")
 	@Size(min=1, message="required*")
 	private String userName;
 	
+	@NotNull(message="required")
+	@Size(min=4, message="Must be more than 3")
 	private String userPass;
 	private String userRepass;
 	private String userState;
 	
 	@NotNull(message="required")
+	@Size(min=9,max=15,message="Invalid Number!")
 	private String userPhoneNumber="+91";
 	
 	public String getUserName() {

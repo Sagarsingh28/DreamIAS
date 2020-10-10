@@ -25,10 +25,11 @@
 			<form:errors path="userName" cssClass="error"/>
 		</div>
 		<div class="form-group">
-			<input class="form-control" type="password" name="userPass" placeholder="Password" />
+			<form:password class="form-control" path="userPass" placeholder="Password (more than 3)" />
+			<form:errors path="userPass" cssClass="error"/>
 		</div>
 		<div class="form-group">
-			<input class="form-control" type="password" name="userRepass" placeholder="Re-type Password" />
+			<form:password class="form-control" path="userRepass" placeholder="Re-type Password" />
 		</div>
 		<div class="form-group">
 			<form:input class="form-control" path="userPhoneNumber" placeholder="Phone Number"/>
