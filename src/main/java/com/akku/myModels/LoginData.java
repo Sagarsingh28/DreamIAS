@@ -1,10 +1,18 @@
 package com.akku.myModels;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import customAnnotations.atGmail;
 
+@Entity
+@Table(name="Login_data")
 public class LoginData {
+	
+	@Id
+	private int id;
 	
 	@NotNull(message="required*")
 	@atGmail
@@ -24,6 +32,14 @@ public class LoginData {
 	@Size(min=9,max=15,message="Invalid Number!")
 	private String userPhoneNumber="+91";
 	
+	
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
 	public String getUserName() {
 		return userName;
 	}
